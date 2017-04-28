@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chris Anderson's Text to Banner codetest</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>text-to-banner</h1>
+    <h3 id="subtitle">enter some text to begin</h3>
+    <div class = "ui">
+      <input type="text" id="input" value="abcdefghijklmnopqrstuvwxyz1234567890-=+_)(*^%$#@!~`{}[]:;''\"""/>
+      <button id="button" onclick="trimText()">convert</button>
+    </div>
+    <div>
+      <canvas id="output" hidden="true"></canvas>
+    </div>
+    <div id="resultDiv" hidden="true">
+    </div>
+    <script src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script>
+    <script src="/main.js"></script>
+
+    <div>2017 <a href="mailto:cl.anderson8@gmail.com">Chris Anderson</a></div>
+  </body>
+</html>
