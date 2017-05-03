@@ -1,5 +1,5 @@
 //CONST AND VARIABLE DECLARATIONS
-const http = require('http')
+const http = require('http');
 const https = require('https');
 const _URL = require('url');
 const readline = require('readline');
@@ -113,20 +113,20 @@ const messages = {
 
 //SAFTEY METHODs
 const resetUrlToRepo = () => {
-  if(keepGoing = true){
+  if(keepGoing === true){
     const { length } = repo;
     if (length > 0){
       const { collectedLinks } = repo[length - 1];
       if(collectedLinks.length > 0){
-        getUrl(collectedLinks[0])
+        getUrl(collectedLinks[0]);
       } else {
         repo.pop();
         resetUrlToRepo();
       }
     } else {
-      resetUrlToSaftey()
+      resetUrlToSaftey();
     }
-  };
+  }
 };
 
 const resetUrlToSaftey = () => {
@@ -139,7 +139,7 @@ const limitAlternativeUrls = link => {
   const { length } = alternativeUrls;
   if(length > 499){
     alternativeUrls.shift();
-  };
+  }
   alternativeUrls.push(link);
 };
 
