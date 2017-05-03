@@ -3,7 +3,9 @@
 ##CANDIDATE:
 
 Chris Anderson
+
 cl.anderson8@gmail.com
+
 Nashville TN
 
 
@@ -12,34 +14,34 @@ Nashville TN
 Challenge 2: Web Crawler (Optional)
   Write a web crawler that ranks Web URLs with the number of remote URLs that reference.
 
-  USE CASE
-       1. User enters in a URL
-       2. Application connects to the URL (visually rendering webpage is not required, but a bonus.)
-       3. Application collects all the remote URLs (i.e. URLs on a different domain) from the HTML.
-       4. Application outputs to the user:
-                  “Found x remote URLs on Domain.com”
-       5. Application then navigates to one of the remote URLs and repeats step #2.
+###USE CASE
+  1. User enters in a URL
+  2. Application connects to the URL (visually rendering webpage is not required, but a bonus.)
+  3. Application collects all the remote URLs (i.e. URLs on a different domain) from the HTML.
+  4. Application outputs to the user:
+            “Found x remote URLs on Domain.com”
+  5. Application then navigates to one of the remote URLs and repeats step #2.
 
-  ADDITIONAL REQUIREMENTS
-        At any time, user should be able to click “Show Results” which will pause the crawler and
-             display in descending order, the URLs and the number of remote URLs they contain.
-        The user should then be able to resume the crawler from where it was paused.
-        The crawler should not re-visit a URL it’s already visited.
+###ADDITIONAL REQUIREMENTS
+  1. At any time, user should be able to click “Show Results” which will pause the crawler and
+        display in descending order, the URLs and the number of remote URLs they contain.
+  2. The user should then be able to resume the crawler from where it was paused.
+  3. The crawler should not re-visit a URL it’s already visited.
 
-  TECH REQUIREMENTS
-        Can be written in C, C#, C++, Java, JavaScript or other common languages
-        Handle all edge-cases and exceptions
+###TECH REQUIREMENTS
+  1. Can be written in C, C#, C++, Java, JavaScript or other common languages
+  2. Handle all edge-cases and exceptions
 
-  UI REQUIREMENTS
-        One TextBox (Input)
-        One Button: “Start / Pause / Resume”
-        One DataGrid/Table (Output)
+###UI REQUIREMENTS
+  1. One TextBox (Input)
+  2. One Button: “Start / Pause / Resume”
+  3. One DataGrid/Table (Output)
 
 
 ##USAGE:
 
 This was developed and tested using Node 7.7.0. It should work with as low as 7.5.0.
-Current -v as of this writing is [7.9.0](https://nodejs.org/en/), so if you install the latest version of Node you should be good.
+Current `node -v` as of this writing is [7.9.0](https://nodejs.org/en/), so if you install the latest version of Node you should be good.
 
 cd challenge2
 npm install
@@ -73,8 +75,7 @@ Speaking of, I chose javascript because of technical resons I explained below, b
 
 I think I still have the crawler revisiting some old sites from time to time. I have a suspiscion that this is both due to 300-type HTTP response codes and also my way of handling errors and making sure the program doesn't hang.
 
-I made some design choices that beyond the project requirements for better usability, at least when it comes to debugging. The program auto-pauses when the results repository array grows to 50 entries (not 50 links, 50 unique hostnames). Users can resume and increment this by 50. Before I put this in, the repo would get... sizeable. I didn't like sutting down the console each and everytime I ran my project.
-
+I made some design choices that beyond the project requirements for better usability, at least when it comes to debugging. The program auto-pauses when the results repository array grows to 50 entries (not 50 links, 50 unique hostnames). Users can resume and increment this by 50. Before I put this in, the repo would get... sizeable, depending on the sites visited. I didn't like sutting down the console each and everytime my project got stuck on some international version of Buzzfeed.
 
 ##PRE-CODE:
 
@@ -89,47 +90,28 @@ And I like es2016/2017. I said it. I LIKE ES2016/2017. It's not perfect, but it'
 I think this will be a Node.js console application. I may have use for the browser for UI elements, but this can't be executed in the browser and I don't see a need for using it for one button. Besides, the world needs more command line scripts. Therefore, all buttons will be text inputs from the CLI, and those must be well prompted.
 
 1. User enters in a URL
-    *Validate URL using an appropriate open source RegEx.
-    *return true to continue to step 2, false displays message to user.
+    * Validate URL using an appropriate open source RegEx.
+    * return true to continue to step 2, false displays message to user.
 2. Application connects to the URL (visually rendering webpage is not required, but a bonus.)
-    *If url valid, get url
-    *handle status sent back by server.
-    *save url to currentUrl variable.
-    *find way for console to open website in browser (This kind of feels like a cop out, but MVP);
+    * If url valid, get url
+    * handle status sent back by server.
+    * save url to `currentUrl` variable.
+    * find way for console to open website in browser (This kind of feels like a cop out, but MVP);
 3. Application collects all the remote URLs (i.e. URLs on a different domain) from the HTML.
-    *using something to similar to document.querySelectorAll('a'), gather all remote URLs
-    *forEach url, check if the collectedUrl.host is different from currentUrl.host
-      1.if true, push into a to foundURLs array, false - ignore.
+    * using something to similar to `document.querySelectorAll('a')`, gather all remote URLs
+    * forEach url, check if the `collectedUrl.host` is different from currentUrl.host
+      1. if true, push into a to foundURLs array, false - ignore.
 4. Application outputs to the user:
                   “Found x remote URLs on Domain.com”
   foundUrls.length and currentUrl.
 5. Application then navigates to one of the remote URLs and repeats step #2.
-  *package { domain: currentUrl, foundUrls: foundUrls }, push into results[];
-  *pick a random index within foundUrls and set it to newUrl;
-  *collect all other not-chosen links as alternative urls to try incase newUrl borks.
-  *push currentUrl into visitedUrls
-  *if visitedUrls.includes(newUrl.host) === true, re-pick random index within alternativeUrls.
-    1.if that fails, repick from collected results in repo as newUrl until visitedUrls.includes === false
-  *set currentUrl === newUrl;
-  *fetch(currentUrl);
+  * package `{ domain: currentUrl, foundUrls: foundUrls }`, `push` into `results[]`;
+  * pick a random index within `foundUrls` and set it to `newUrl`;
+  * collect all other not-chosen links as `alternativeUrls` to try incase newUrl borks.
+  * `visitedUrls.push(currentUrl)`
+  * if `visitedUrls.includes(newUrl.host) === true`, re-pick random index within alternativeUrls.
+    1. if that fails, repick from collected results in repo as newUrl until `false`
+  
+  * UI will be done via CLI and prompted commands.
 
-ADDITIONAL REQUIREMENTS
-  * At any time, user should be able to click “Show Results” which will pause the crawler and
-    display in descending order, the URLs and the number of remote URLs they contain.
-  * The user should then be able to resume the crawler from where it was paused.
-    1.on 'OK' button in the alert, application resumes at step 5 above.
-  * The crawler should not re-visit a URL it’s already visited.
-    1.checked via visetedUrls.includes() above.
-
-  *edge cases
-    1.If no remote urls, display message (YOU FOUND THE END OF THE INTERWEBS!!! )and results to the user.
-      *retry from a new foundUrl index after certain timeout
-    2.probably should check for a.hidden === false, just so we don't accidently go to a very bad place.
-    
-  UI REQUIREMENTS
-     One TextBox (Input)
-     One Button: “Start / Pause / Resume”
-     One DataGrid/Table (Output)
-    *UI will be done via CLI and prompted commands.
-
-Thanks for looking through this. Any comments are welcome. Have a great day!
+##Thanks for looking through this. Any comments are welcome. Have a great day!

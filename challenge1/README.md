@@ -22,24 +22,24 @@ Nashville TN
          ░░░░░░░░░░░░░░░░░░░░░
 
   TECH REQUIREMENTS
-        Can be written in C, C#, C++, Java, JavaScript or other common languages
-        Handle all edge-cases and exceptions
+  * Can be written in C, C#, C++, Java, JavaScript or other common languages
+  * Handle all edge-cases and exceptions
 
   UI REQUIREMENTS
-        One TextBox (Input)
-        One Button
-        One TextBox (Output)
+  * One TextBox (Input)
+  * One Button
+  * One TextBox (Output)
 
 ##Design Thoughts:
 
 So after trying to do this in c# .NET core in the Mac environment, I've converted to javascript. I wanted to
 write this in C#/ .NET because I think the console envrionment is perfect for this. After research, my action plan was
 
--Prompt user for text input
--Console.ReadLine() the input as string
--Convert string to a Bitmap image
--Using a StringBuilder, I'd Loop over each pixel and .Append() an ░ or █ depending if the pixel was dark or not
--Console.WriteLine() those created strings.
+* Prompt user for text input
+* Console.ReadLine() the input as string
+* Convert string to a Bitmap image
+* Using a StringBuilder, I'd Loop over each pixel and .Append() an ░ or █ depending if the pixel was dark or not
+* Console.WriteLine() those created strings.
 
 Now I think there may be some flaws in that plan, but I really didn't get to test it out. 
 .NET core for Mac doesn't make use of the System.Drawing namespace due to some concerns about cross-platform performance,
