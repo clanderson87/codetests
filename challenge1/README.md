@@ -1,13 +1,13 @@
 # Challenge 1
 
-##CANDIDATE:
+## CANDIDATE:
 
 Chris Anderson
 cl.anderson8@gmail.com
 Nashville TN
 
 
-##APP SPEC:
+## APP SPEC:
   
   Challenge 1: Text to Banner
   Given an alphanumeric input of 0-100 characters, produce an output similar to that of an LED display.
@@ -30,7 +30,7 @@ Nashville TN
   * One Button
   * One TextBox (Output)
 
-##Design Thoughts:
+## Design Thoughts:
 
 So after trying to do this in c# .NET core in the Mac environment, I've converted to javascript. I wanted to
 write this in C#/ .NET because I think the console envrionment is perfect for this. After research, my action plan was

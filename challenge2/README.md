@@ -1,6 +1,6 @@
-#Challenge2
+# Challenge2
 
-##CANDIDATE:
+## CANDIDATE:
 
 Chris Anderson
 
@@ -9,12 +9,12 @@ cl.anderson8@gmail.com
 Nashville TN
 
 
-##APP SPEC:
+## APP SPEC:
 
 Challenge 2: Web Crawler (Optional)
   Write a web crawler that ranks Web URLs with the number of remote URLs that reference.
 
-###USE CASE
+### USE CASE
   1. User enters in a URL
   2. Application connects to the URL (visually rendering webpage is not required, but a bonus.)
   3. Application collects all the remote URLs (i.e. URLs on a different domain) from the HTML.
@@ -22,23 +22,23 @@ Challenge 2: Web Crawler (Optional)
             “Found x remote URLs on Domain.com”
   5. Application then navigates to one of the remote URLs and repeats step #2.
 
-###ADDITIONAL REQUIREMENTS
+### ADDITIONAL REQUIREMENTS
   1. At any time, user should be able to click “Show Results” which will pause the crawler and
         display in descending order, the URLs and the number of remote URLs they contain.
   2. The user should then be able to resume the crawler from where it was paused.
   3. The crawler should not re-visit a URL it’s already visited.
 
-###TECH REQUIREMENTS
+### TECH REQUIREMENTS
   1. Can be written in C, C#, C++, Java, JavaScript or other common languages
   2. Handle all edge-cases and exceptions
 
-###UI REQUIREMENTS
+### UI REQUIREMENTS
   1. One TextBox (Input)
   2. One Button: “Start / Pause / Resume”
   3. One DataGrid/Table (Output)
 
 
-##USAGE:
+## USAGE:
 
 This was developed and tested using Node 7.7.0. It should work with as low as 7.5.0.
 Current `node -v` as of this writing is [7.9.0](https://nodejs.org/en/), so if you install the latest version of Node you should be good.
@@ -60,7 +60,7 @@ Then, you can:
 '?' to see debugging variables
 'x' to exit.
 
-##RETROSPECTIVE:
+## RETROSPECTIVE:
 
 Google is hard work.
 
@@ -77,9 +77,9 @@ I think I still have the crawler revisiting some old sites from time to time. I 
 
 I made some design choices that beyond the project requirements for better usability, at least when it comes to debugging. The program auto-pauses when the results repository array grows to 50 entries (not 50 links, 50 unique hostnames). Users can resume and increment this by 50. Before I put this in, the repo would get... sizeable, depending on the sites visited. I didn't like sutting down the console each and everytime my project got stuck on some international version of Buzzfeed.
 
-##PRE-CODE:
+## PRE-CODE:
 
-Design thoughts:
+### Design thoughts:
 
 Ideally, I'd use a strongly typed language like C#, but every time I boot my Virtual Machine my Mac cries like Kevin James running a Marathon. Then it dies - much like Kevin James running a Marathon.
 
@@ -88,6 +88,8 @@ I've researched how to do this in python, but I'm not experienced enough with it
 And I like es2016/2017. I said it. I LIKE ES2016/2017. It's not perfect, but it's trying to get better. I respect that. I can identify with that. So Javascript it is.
 
 I think this will be a Node.js console application. I may have use for the browser for UI elements, but this can't be executed in the browser and I don't see a need for using it for one button. Besides, the world needs more command line scripts. Therefore, all buttons will be text inputs from the CLI, and those must be well prompted.
+
+### Outline
 
 1. User enters in a URL
     * Validate URL using an appropriate open source RegEx.
@@ -114,4 +116,6 @@ I think this will be a Node.js console application. I may have use for the brows
   
   * UI will be done via CLI and prompted commands.
 
-##Thanks for looking through this. Any comments are welcome. Have a great day!
+## closing
+
+Thanks for looking at this. Any comments are welcome. Have a great day!
