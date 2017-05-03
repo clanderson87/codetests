@@ -2,11 +2,9 @@
 
 ## CANDIDATE:
 
-Chris Anderson
-
-cl.anderson8@gmail.com
-
-Nashville TN
+Chris Anderson  
+cl.anderson8@gmail.com  
+Nashville TN  
 
 
 ## APP SPEC:
@@ -43,22 +41,22 @@ Challenge 2: Web Crawler (Optional)
 This was developed and tested using Node 7.7.0. It should work with as low as 7.5.0.
 Current `node -v` as of this writing is [7.9.0](https://nodejs.org/en/), so if you install the latest version of Node you should be good.
 
-cd challenge2
-npm install
-node chris-anderson-crawler.js
+`cd challenge2`
+`npm install`
+`node chris-anderson-crawler.js`
 
 Enter a URL to begin. Ex: 
 
-'digg.com'
+`'digg.com'`
 
 Then, you can:
 
-'p' to pause.
-'s' pause and show results.
-'r' to resume after pausing.
-'o' to open some of these links in the browser (this has been tested on macOS, but this doesn't work in all versions of windows, so be advised)
-'?' to see debugging variables
-'x' to exit.
+`'p'` to pause.  
+`'s'` pause and show results.  
+`'r'` to resume after pausing.  
+`'o'` to open some of these links in the browser (this has been tested on macOS, but this doesn't work in all versions of windows, so be advised)  
+`'?'` to see debugging variables.  
+`'x'` to exit.  
 
 ## RETROSPECTIVE:
 
@@ -118,4 +116,4 @@ I think this will be a Node.js console application. I may have use for the brows
 
 ## closing
 
-Thanks for looking at this. Any comments are welcome. Have a great day!
+Thanks for taking time to look at this. If you have any questions, please let me know. My contact info is enclosed with this. Have a great one!

@@ -2,9 +2,9 @@
 
 ## CANDIDATE:
 
-Chris Anderson
-cl.anderson8@gmail.com
-Nashville TN
+Chris Anderson  
+cl.anderson8@gmail.com  
+Nashville TN  
 
 
 ## APP SPEC:
