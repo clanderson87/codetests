@@ -41,9 +41,9 @@ Challenge 2: Web Crawler (Optional)
 This was developed and tested using Node 7.7.0. It should work with as low as 7.5.0.
 Current `node -v` as of this writing is [7.9.0](https://nodejs.org/en/), so if you install the latest version of Node you should be good.
 
-`cd challenge2`
-`npm install`
-`node chris-anderson-crawler.js`
+`cd challenge2`  
+`npm install`  
+`node chris-anderson-crawler.js`  
 
 Enter a URL to begin. Ex: 
 
